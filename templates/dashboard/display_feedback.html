@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faq JavaScript</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="{% static 'dasboard/review/css/display_feedback.css' %} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        
+        <main class="accordion">
+            <div class="faq-img">
+                <img src="{% static 'dasboard/review/img/faq.svg' %}" alt="" class="accordion-img">
+            </div>
+            <div class="content-accordion">
+                {% for feedback in feedback %}
+                <div class="question-answer">
+                    <div class="question">
+                        <h3 class="title-question">
+                            {{ feedback.name}} <span style='color:red' >At</span>  {{ feedback.date_created}}    
+                        </h3>
+                        <button class="question-btn">
+                            <span class="up-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </span>
+                            <span class="down-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="answer">
+                        {% if feedback.feedback == 'Horrible'   %}
+                        <p> FeddBack :- <span style='color:red' >{{ feedback.feedback }} &nbsp; <img src="{% static 'dasboard/review/Emojis/392103840_SAD_EMOJI_WITH_TEAR_400px.gif' %}"  width='50px' height='50px'></span></p>
+                        {% elif feedback.feedback == 'Bad'   %}
+                        <p> FeddBack :- <span style='color:orange' >{{ feedback.feedback }} &nbsp; <img src="{% static 'dasboard/review/Emojis/giphy.gif' %}"  width='50px' height='50px'></span></p>
+                        {% elif feedback.feedback == 'Good'   %}
+                        <p> FeddBack :- <span style='color:green' >{{ feedback.feedback }} &nbsp; <img src="{% static 'dasboard/review/Emojis/0e3ee551876e1ad2a39f89e4adf9168a.gif' %}"  width='50px' height='50px'></span></p>
+                      
+                        {% elif feedback.feedback == 'OK'   %}
+                        <p> FeddBack :- <span style='color:blue' >{{ feedback.feedback }} &nbsp; <img src="{% static 'dasboard/review/Emojis/ecc015d4e89f77b435df3cd81928ad48.gif' %}"  width='50px' height='50px'> </span></p>
+                        {% else %}
+                        <p> FeddBack :- <span style='color:green' >{{ feedback.feedback }} &nbsp; <img src="{% static 'dasboard/review/Emojis/icegif-5551.gif' %}"  width='50px' height='50px'> </span></p>
+                        {% endif %}
+                        <p> Suggestion :-   {{ feedback.suggestion }} </p>
+                        <hr>
+                    </div>
+                </div>
+                {% endfor %}
+              
+                
+            </div>
+        </main>
+    </div>
+    <script src="{% static 'dasboard/review/js/display_feedback.js' %}"></script>
+</body>
+</html>

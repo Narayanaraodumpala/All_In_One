@@ -1,0 +1,46 @@
+<!doctype html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>cards</title>
+        <link rel="stylesheet" href="{% static 'css/dcloths.css' %}">
+    </head>
+    <body>
+<div class="container">
+    {% for cloth in cloths %}
+    <div class="card">
+        <div class="box">
+            <div class="content">
+                <h2>{{ cloth.id }}</h2>
+                <h1>{{ cloth.category }}</h1>
+                <img src="{{ cloth.category_image.url }}" alt="" width="200" height="200">
+                <a href="{% url  'cloths_products' cloth.id %}" >Open</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    {% comment %} <div class="card">
+        <div class="box">
+            <div class="content">
+                <h2>02</h2>
+                <h3> card two</h3>
+                <p> lorem ispum uyddgv dytd ytd ddy y </p>
+                <a href="#" >Read more</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="box">
+            <div class="content">
+                <h2>03</h2>
+                <h3> card three</h3>
+                <p> lorem ispum uyddgv dytd ytd ddy y </p>
+                <a href="#" >Read more</a>
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+</body>
+</html>

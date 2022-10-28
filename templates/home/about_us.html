@@ -1,0 +1,188 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnePlaceforAll</title>
+
+    <!-- font awesome cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/mysrtyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/getintouch.css' %}">
+    <meta charset="utf-8">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" />
+    <link rel="stylesheet" href="{%  static 'css/about-us.css' %}" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" />
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="{% static 'images/download23.png' %}" alt="">
+        </a>
+
+        <nav class="navbar">
+            <a href="{% url 'home' %}">home</a>
+            <a href="{% url 'about-us' %}">about</a>
+            <a href="#menu">menu</a>
+            <a href="#products">products</a>
+            <a href="#review">Signup</a>
+            <a href="#contact">contact</a>
+
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-1.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-2.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 02</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-3.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 03</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-4.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 04</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <a href="#" class="btn">checkout now</a>
+        </div>
+
+    </header>
+    <section class="about-section">
+        <div class="about-container">
+            <div class="profile-image">
+                <img src="{% static 'images/electronics.png' %}" alt="" />
+            </div>
+            <header class="about-heading">Who We Are....?</header>
+            <div class="description">
+
+                <p>
+
+We are maximisers. We're out on our own journeys to maximise - be the best at what we choose and care about the most - whether it be our impact, voice, potential, ideas, influence, well-being or more. Because when we maximise ourselves in our inclusive teams, AllInOne is able to deliver the best imaginable value for our customers, stakeholders and the planet!
+
+                </p>
+                <p>
+                    We celebrate our biggest risk that
+didn't work out each year with the
+Chandrayaan Award at our Annual
+Awards ceremony!
+                </p>
+                <p>
+                    We have a dedicated Workplace
+Equality charter that focuses on
+inclusive talent attraction, talent
+development & retention, and culture &
+policies, supported by strong
+leadership commitment.
+                </p>
+            </div>
+
+            <div class="projects-container">
+                <div class="project">
+                    <h3 class="project-name">Our Deliveries</h3>
+                    <div class="project-number odometer websites-designed">6</div>
+                </div>
+
+                <div class="project">
+                    <h3 class="project-name">happy 5<sup>*</sup> rivews</h3>
+                    <div class="project-number odometer apps-developed">6</div>
+                </div>
+            </div>
+
+            <div class="our-mission">
+                <img class="quote-icon" src="images/quote-icon.png" alt="" />
+                <p>Our mission is to provide the best services to our Custumours.</p>
+            </div>
+            <div class="buttun">
+                <button type="submit" class="btn btn-outline-light"> read More</button>
+            </div>
+
+        </div>
+        <div class="buttun-nav">
+            <a href="{% url 'home' %}"><button type="submit" class="btn btn-outline-secondary"> go Back</button></a>
+        </div>
+
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+
+    <script>
+        const websitesDesigned = document.querySelector(".websites-designed");
+        const appsdeveloped = document.querySelector(".apps-developed");
+
+        setTimeout(() => {
+            websitesDesigned.innerHTML = "1,52488";
+            appsdeveloped.innerHTML = "82552";
+        }, 400);
+    </script>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="{% static 'js/myscript.js' %}"></script>
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

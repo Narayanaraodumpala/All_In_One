@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnePlaceforAll</title>
+
+    <!-- font awesome cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/mysrtyle.css' %}">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="{% static 'images/download23.png' %}" alt="">
+        </a>
+
+        <nav class="navbar">
+            <a href="{% url 'home' %}">home</a>
+            <a href="{% url 'about-us' %}">about</a>
+            <a href="#menu">menu</a>
+            <a href="#products">products</a>
+            <a href="{% url 'signup' %}">SignIn</a>
+            <a href="{% url 'dashboard_types' %}">dashboard</a>
+            <a href="#contact">contact</a>
+
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-1.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-2.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 02</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-3.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 03</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-4.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 04</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <a href="#" class="btn">checkout now</a>
+        </div>
+
+    </header>
+
+
+<section class="login-signin">
+      <h3 class="login-signup" style="color: whitesmoke">Dont You Have an account ...?  </h3><br><br>
+
+
+     <span ><a href="{% url 'signup' %}" ><button type="submit">Signup</button></a></span>
+</section>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+            <span>
+                <img src="{% static 'images/comic.jpg' %}" style="height: 300px;width: 450px" ><br><br>
+            </span>
+			<h1> For More Fun , Just Signin</h1>
+			<div class="social-container">
+
+			</div>
+
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+        <form action="{% url 'login_signup' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                               
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="text" placeholder="username" required name="username" >
+			<input type="password" placeholder="Password" required  name="password">
+			<a href="{% url 'forgot_password' %}">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+
+				<h1>Welcome Back!</h1>
+					<p>come and join with us , we promise U get a more fun</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			
+				<h1>Hello, Friend!</h1>
+                <div class="overlay-panel overlay-right">
+                    {% if message %}
+              <h3>{{message}}</h3>
+                             <br><br>
+                {% endif %} 
+                {% if user_mesg %}
+              <h3>{{user_mesg}}</h3>
+                             <br><br>
+                {% endif %} 
+         
+                         {% if error %}
+              <h3>Either username or password is incorrect</h3>
+                             <br><br>
+                {% endif %}
+				<p>come and join with us , we promise U get a more fun</p>
+				<button class="ghost" id="signUp">Swipe</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		Created with <i class="fa fa-heart"></i> by
+		<a target="_blank" href="https://florin-pop.com">Nandan</a>
+
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="{% static 'js/myscript.js' %}"></script>
+    <script src="{% static 'js/signup.js' %}"></script>
+
+</body>
+
+</html>

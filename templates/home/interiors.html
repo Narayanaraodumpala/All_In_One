@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+{% load static %}
+{#<html lang="en">#}
+{##}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta http-equiv="X-UA-Compatible" content="IE=edge">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">#}
+{#    <title>OnePlaceforAll</title>#}
+{##}
+{#    <!-- font awesome cdn link  -->#}
+{#    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">#}
+{#    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"#}
+{#        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">#}
+{##}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">#}
+{##}
+{#    <!-- custom css file link  -->#}
+{#    <link rel="stylesheet" href="{% static 'css/signup.css' %}">#}
+{#        <link rel="stylesheet" href="{% static 'css/slides.css' %}">#}
+{##}
+{#</head>#}
+{##}
+{#<body>#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- magnific popup css link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+  <!-- font awesome file link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <!-- bootstrap file link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="{% static 'css/interior.css' %}">
+
+  <title>AIO-Interior</title>
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header fixed-top">
+
+<a href="#" class="logo" style="text-decoration: none"><img src="{% static 'images/interiors/pexels-jean-van-der-meulen-1457842.jpg' %}" alt=""><span style="padding-left: 20px;font-size: 25px;text-decoration: none;color: #2aabd2">AllInOne-Interior</span></a>
+
+<nav>
+  <ul>
+    <li> <a href="{% url 'home' %}">home</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#service">services</a></li>
+    <li><a href="#project">projects</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<div class="fas fa-bars"></div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+
+<section id="home" class="home container-fluid p-0">
+
+<div class="row hero">
+  <div class="col pl-3 ml-sm-5 p-0">
+    <h1 class="text1">Interior Design</h1>
+    <h3 class="text2">Architechture services</h3>
+  </div>
+</div>
+
+<div class="counting">
+
+<div class="box">
+  <h1 class="count" data-count="1200">1200+</h1>
+  <h3>working hours</h3>
+</div>
+
+<div class="box">
+  <h1 class="count" data-count="15">15+</h1>
+  <h3>awards</h3>
+</div>
+
+<div class="box">
+  <h1 class="count" data-count="1000">1000+</h1>
+  <h3>clients</h3>
+</div>
+
+<div class="box">
+  <h1 class="count" data-count="840">840+</h1>
+  <h3>projects</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- home section ends -->
+
+
+<!-- about section starts  -->
+
+<section id="about" class="about container">
+
+<h1 class="heading">about us</h1>
+
+<div class="row align-items-center">
+
+  <div class="col-md-6 image">
+    <img src="{% static 'images/interiors/pexels-vecislavas-popa-1669799.jpg' %}" width="90%" alt="">
+    
+  </div>
+
+  <div class="col-md-6 info">
+    <h2>the best Interior Design in the city</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste reprehenderit sequi enim porro dolor explicabo distinctio voluptates exercitationem nam excepturi?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam voluptatibus sint totam, ea velit eius. Praesentium consequuntur sint porro, similique ut corrupti dolorem eligendi. Sunt porro quos libero illum quo officia laboriosam quisquam, nam totam?</p>
+    <div class="icons">
+      <a href="#" class="fab fa-facebook-f"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-instagram"></a>
+      <a href="#" class="fab fa-pinterest "></a>
+    </div>
+  </div>
+
+</div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- service section starts  -->
+
+<section id="service" class="service">
+
+<h1 class="heading">our services</h1>
+
+<div class="box-container mx-auto">
+
+  <div class="box">
+    <div class="fas fa-palette"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div>
+
+  <div class="box">
+    <div class="fas fa-tools"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div>
+
+  <div class="box">
+    <div class="fas fa-house-user"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div>
+
+  <div class="box">
+    <div class="fas fa-couch"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div>
+
+  <div class="box">
+    <div class="fas fa-bed"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div>
+
+  <div class="box">
+    <div class="fas fa-bath"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div>
+
+</div>
+
+</section>
+
+<!-- service section ends -->
+
+<!-- project section starts   -->
+
+<section id="project" class="project">
+
+  <div class="heading">our projects</div>
+
+  <div class="box-container mx-auto">
+
+  <div class="box">
+    <a href="{% static 'images/interiors/img-1.jpg' %}" title="house">
+
+          <img src="{% static 'images/interiors/pexels-vecislavas-popa-1571452.jpg' %}" width="90%" alt="">
+
+
+    </a>
+
+  </div>
+
+  <div class="box">
+    <a href="{% static 'images/interiors/img-2.jpg' %}" title="hall">
+         <img src="{% static 'images/interiors/pexels-tom-swinnen-2249959.jpg' %}" alt="">
+
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="{% static 'images/interiors/img-3.jpg' %}" title="pole">
+      <img src="{% static 'images/interiors/pexels-dominika-roseclay-1139784.jpg' %}" alt="">
+    </a>
+
+  </div>
+
+  <div class="box">
+    <a href="{% static 'images/interiors/img-4.jpg' %}" title="kitchen">
+     <img src="{% static 'images/interiors/pexels-vecislavas-popa-1669799.jpg' %}" alt="" height="200">
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="{% static 'images/interiors/img-5.jpg' %}" title="bath">
+      <img src="{% static 'images/interiors/p1.jpg' %}" alt="">
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="{% static 'images/interiors/img-6.jpg' %}" title="toilet">
+      <img src="{% static 'images/interiors/p2.jpg' %}" alt="">
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="{% static 'images/interiors/img-2.jpg' %}" title="hall">
+         <img src="{% static 'images/interiors/pexels-tom-swinnen-2249959.jpg' %}" alt="">
+
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="{% static 'images/interiors/img-3.jpg' %}" title="pole">
+      <img src="{% static 'images/interiors/pexels-dominika-roseclay-1139784.jpg' %}" alt="">
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="{% static 'images/interiors/img-4.jpg' %}" title="kitchen">
+     <img src="{% static 'images/interiors/pexels-vecislavas-popa-1669799.jpg' %}" alt="" height="200">
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="{% static 'images/interiors/img-5.jpg' %}" title="bath">
+      <img src="{% static 'images/interiors/p1.jpg' %}" alt="">
+    </a>
+  </div>
+
+
+
+  </div>
+
+  </section>
+
+<!-- project section ends -->
+
+<!-- contact section starts  -->
+
+<section id="contact" class="contact">
+
+<h1 class="heading">contact us</h1>
+
+<div class="contact-box-container mx-auto">
+
+<div class="contact-box">
+  <i class="fas fa-map-marker-alt"></i>
+  <h3>mumbai, india - 400104</h3>
+</div>
+
+<div class="contact-box">
+  <i class="fas fa-envelope"></i>
+  <h3>xyz@gmail.com</h3>
+</div>
+
+<div class="contact-box">
+  <i class="fas fa-phone"></i>
+  <h3>+9100000000</h3>
+</div>
+
+</div>
+
+<div class="form-container mx-auto">
+
+<form action="">
+
+  <div class="inputBox">
+      <label>
+          <input type="text" placeholder="first name">
+      </label>
+      <label>
+          <input type="text" placeholder="last name">
+      </label>
+  </div>
+    <label>
+        <input type="email" placeholder="e-mail">
+    </label>
+    <label for=""></label><textarea name="" id="" cols="30" rows="10" placeholder="message"></textarea>
+  <input type="submit" value="send">
+
+</form>
+
+</div>
+
+
+</section>
+
+<!-- contact section ends -->
+
+<!-- footer section starts  -->
+
+<section class="container-fluid footer">
+
+<div class="row">
+
+<div class="col-md-3">
+  <h2><img src="{% static 'images/interiors/hotel-architectural-tourism-travel-53577.jpeg' %}" alt=""></h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi rerum facilis, deserunt ea commodi sed voluptatum beatae accusamus nisi pariatur.</p>
+</div>
+
+<div class="col-md-3">
+  <h2>our location</h2>
+  <div class="list">
+    <a href="#">india</a>
+    <a href="#">france</a>
+    <a href="#">usa</a>
+    <a href="#">japan</a>
+    <a href="#">rusia</a>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <h2>follow us</h2>
+  <div class="list">
+    <a href="#">facebook</a>
+    <a href="#">twitter</a>
+    <a href="#">instagram</a>
+    <a href="#">pinterest</a>
+  </div>
+</div>
+
+<div class="col-md-3 text-center text-md-left letter">
+  <h2>newsletter</h2>
+  <p>subscribe for latest updates</p>
+    <label>
+        <input type="email" placeholder="enter your email">
+    </label>
+    <input type="submit" placeholder="subscribe">
+</div>
+
+</div>
+
+<h1 class="credit">created by <span>mr. web designer</span> | all rights reserved. </h1>
+
+</section>
+
+<!-- footer section ends -->
+
+<pre>
+
+
+
+</pre>
+
+
+
+
+
+
+
+
+{##}
+{##}
+{##}
+{##}
+{#<!-- jquery file link  -->#}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>#}
+{##}
+{#<!-- magnific popup link  -->#}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>#}
+{##}
+{#<!-- main/custom javascript file link  -->#}
+{#<script src="{% static 'js/interior.js' %}"></script>#}
+{##}
+{#</body>#}
+{#</html>#}
+{##}
+{##}
+{#    <!-- header section starts  -->#}
+{##}
+{#    <header class="header">#}
+{##}
+{#        <a href="#" class="logo">#}
+{#            <img src="{% static 'images/download23.png' %}" alt="">#}
+{#        </a>#}
+{##}
+{#        <nav class="navbar">#}
+{#            <a href="{% url 'home' %}">home</a>#}
+{#            <a href="{% url 'about-us' %}">about</a>#}
+{#            <a href="#menu">menu</a>#}
+{#            <a href="#products">products</a>#}
+{#            <a href="{% url 'signup' %}">SignIn</a>#}
+{#            <a href="#contact">contact</a>#}
+{##}
+{#        </nav>#}
+{##}
+{#        <div class="icons">#}
+{#            <div class="fas fa-search" id="search-btn"></div>#}
+{#            <div class="fas fa-shopping-cart" id="cart-btn"></div>#}
+{#            <div class="fas fa-bars" id="menu-btn"></div>#}
+{#        </div>#}
+{##}
+{#        <div class="search-form">#}
+{#            <input type="search" id="search-box" placeholder="search here...">#}
+{#            <label for="search-box" class="fas fa-search"></label>#}
+{#        </div>#}
+{##}
+{#        <div class="cart-items-container">#}
+{#            <div class="cart-item">#}
+{#                <span class="fas fa-times"></span>#}
+{#                <img src="{% static 'images/cart-item-1.png' %}" alt="">#}
+{#                <div class="content">#}
+{#                    <h3>cart item 01</h3>#}
+{#                    <div class="price">$15.99/-</div>#}
+{#                </div>#}
+{#            </div><div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">#}
+{#                <ol class="carousel-indicators">#}
+{#                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>#}
+{#                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>#}
+{#                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>#}
+{#                </ol>#}
+{#                <div class="carousel-inner">#}
+{#                  <div class="carousel-item active">#}
+{#                    <img src="{% static 'images/' %}" class="d-block w-100" alt="...">#}
+{#                  </div>#}
+{#                  <div class="carousel-item">#}
+{#                    <img src="..." class="d-block w-100" alt="...">#}
+{#                  </div>#}
+{#                  <div class="carousel-item">#}
+{#                    <img src="..." class="d-block w-100" alt="...">#}
+{#                  </div>#}
+{#                </div>#}
+{#                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">#}
+{#                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
+{#                  <span class="sr-only">Previous</span>#}
+{#                </a>#}
+{#                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">#}
+{#                  <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
+{#                  <span class="sr-only">Next</span>#}
+{#                </a>#}
+{#              </div>#}
+{#            <div class="cart-item">#}
+{#                <span class="fas fa-times"></span>#}
+{#                <img src="{% static 'images/cart-item-3.png' %}" alt="">#}
+{#                <div class="content">#}
+{#                    <h3>cart item 03</h3>#}
+{#                    <div class="price">$15.99/-</div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="cart-item">#}
+{#                <span class="fas fa-times"></span>#}
+{#                <img src="{% static 'images/cart-item-4.png' %}" alt="">#}
+{#                <div class="content">#}
+{#                    <h3>cart item 04</h3>#}
+{#                    <div class="price">$15.99/-</div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <a href="#" class="btn">checkout now</a>#}
+{#        </div>#}
+{##}
+{#    </header>#}
+{#    <pre>#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#    </pre>#}
+{#  <table >#}
+{#      <tr>#}
+{#     <td  style="height: 500px;width: 950px;">#}
+{#            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">#}
+{#                <ol class="carousel-indicators">#}
+{#                  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>#}
+{#                  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>#}
+{#                  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>#}
+{#                </ol>#}
+{#                <div class="carousel-inner">#}
+{#                  <div class="carousel-item active">#}
+{#                    <img src="{% static 'images/interior/pexels-photo-269252.webp' %}" style="height: 550px;width: 1300px;" class="d-block w-100" alt="...">#}
+{#                    <div class="carousel-caption d-none d-md-block">#}
+{#                      <h5>Cloth Slides</h5>#}
+{#                      <p>All the dresses are avilable here.</p>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  <div class="carousel-item">#}
+{#                    <img src="{% static 'images/interior/pexels-photo-271795.jpeg' %}"  style="height: 550px;width: 1300px;" class="d-block w-100" alt="...">#}
+{#                    <div class="carousel-caption d-none d-md-block">#}
+{#                           <h5>Cloth Slides</h5>#}
+{#                      <p>All the dresses are avilable here.</p>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  <div class="carousel-item">#}
+{#                    <img src="{% static 'images/interior/pexels-photo-271816.webp' %}"  style="height: 550px;width: 1300px;" class="d-block w-100" alt="...">#}
+{#                    <div class="carousel-caption d-none d-md-block">#}
+{#                          <h5>Cloth Slides</h5>#}
+{#                      <p>All the dresses are avilable here.</p>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                       <div class="carousel-item">#}
+{#                    <img src="{% static 'images/interior/pexels-photo-707581.webp' %}"  style="height: 550px;width: 1300px;" class="d-block w-100" alt="...">#}
+{#                    <div class="carousel-caption d-none d-md-block">#}
+{#                           <h5>Cloth Slides</h5>#}
+{#                      <p>All the dresses are avilable here.</p>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  <div class="carousel-item">#}
+{#                    <img src="{% static 'images/interior/pexels-photo-1005058.jpeg' %}"  style="height: 550px;width: 1300px;" class="d-block w-100" alt="...">#}
+{#                    <div class="carousel-caption d-none d-md-block">#}
+{#               <h5>Cloth Slides</h5>#}
+{#                      <p>All the dresses are avilable here.</p>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                       <div class="carousel-item">#}
+{#                    <img src="{% static 'images/interior/pexels-photo-1090638.webp' %}"  style="height: 550px;width: 1300px;" class="d-block w-100" alt="...">#}
+{#                    <div class="carousel-caption d-none d-md-block">#}
+{#               <h5>Cloth Slides</h5>#}
+{#                      <p>All the dresses are avilable here.</p>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  <div class="carousel-item">#}
+{#                    <img src="{% static 'images/interior/pexels-photo-1125137.webp' %}"  style="height: 550px;width: 1300px;" class="d-block w-100" alt="...">#}
+{#                    <div class="carousel-caption d-none d-md-block">#}
+{#               <h5>Cloth Slides</h5>#}
+{#                      <p>All the dresses are avilable here.</p>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                       <div class="carousel-item">#}
+{#                    <img src="{% static 'images/interior/pexels-photo-1329711.jpeg' %}"  style="height: 550px;width: 1300px;" class="d-block w-100" alt="...">#}
+{#                    <div class="carousel-caption d-none d-md-block">#}
+{#                   <h5>Cloth Slides</h5>#}
+{#                      <p>All the dresses are avilable here.</p>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  <div class="carousel-item">#}
+{#                    <img src="{% static 'images/interior/pexels-photo-269252.webp' %}"  style="height: 550px;width: 1300px;" class="d-block w-100" alt="...">#}
+{#                    <div class="carousel-caption d-none d-md-block">#}
+{#               <h5>Cloth Slides</h5>#}
+{#                      <p>All the dresses are avilable here.</p>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+{##}
+{#                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">#}
+{#                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
+{#                  <span class="sr-only">Previous</span>#}
+{#                </a>#}
+{#                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">#}
+{#                  <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
+{#                  <span class="sr-only">Next</span>#}
+{#                </a>#}
+{##}
+{#        </div>#}
+{#          </td>#}
+{#      </tr>#}
+{#  </table>#}
+{##}
+{##}
+{##}
+{##}
+{#<footer>#}
+{#	<p>#}
+{#		Created with <i class="fa fa-heart"></i> by#}
+{#		<a target="_blank" href="https://florin-pop.com">Nandan</a>#}
+{##}
+{#</footer>#}
+{##}
+{##}
+{#  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"#}
+{#        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">#}
+{#    </script>#}
+{#    <script src="{% static 'js/myscript.js' %}"></script>#}
+{#    <script src="{% static 'js/signup.js' %}"></script>#}
+{#    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>#}
+{#    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>#}
+{##}
+{#</body>#}
+{##}
+{#</html>#}

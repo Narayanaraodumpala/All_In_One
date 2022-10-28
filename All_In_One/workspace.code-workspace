@@ -1,0 +1,40 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../xrweb-flask"
+		}
+	],
+	"settings": {
+		"sqltools.connections": [
+			{
+				"mysqlOptions": {
+					"authProtocol": "default"
+				},
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 3000,
+				"askForPassword": true,
+				"driver": "MySQL",
+				"name": "allinone",
+				"database": "allinone",
+				"username": "allinone"
+			},
+			{
+				"mysqlOptions": {
+					"authProtocol": "default"
+				},
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 3000,
+				"askForPassword": true,
+				"driver": "MySQL",
+				"name": "django.db.backends.mysql",
+				"database": "allinone",
+				"username": "allinone"
+			}
+		]
+	}
+}

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnePlaceforAll</title>
+
+    <!-- font awesome cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/mysrtyle.css' %}">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/pagination.css' %}"> {% endcomment %}
+
+<style type="text/css">
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+body{
+  font-family: sans-serif;
+  padding-top: 150px;
+  background:#000;
+}
+.main{
+  margin: auto;
+  width: 50%;
+}
+.main input,button{
+  width:75%;
+  border:2px solid white;
+  border-right:0px;
+  font-size: 18px;
+  padding:12px;
+  background-color: transparent;
+  color:white;
+  border-radius:0.9cm;
+}
+.main input:hover{
+  opacity: .8;
+}
+.main button{
+  width:25%;
+  background-color: #eee;
+  color:black;
+  transition: all 0.3s;
+  float: right;
+  border-left:0px;
+}
+.main button:hover{
+  opacity: .8;
+}
+
+
+
+
+ .hero .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.hero .box-container .box{
+    padding:5rem;
+    text-align: center;
+    border:var(--border); 
+    border-radius:0.8cm;   
+}
+
+.hero .box-container .box img{
+    height: 10rem;
+}
+
+.hero .box-container .box h3{
+    color: #fff;
+    font-size: rem;
+    padding:1rem 0;
+}
+.hero .box-container .box .price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding:.5rem 0;
+}
+
+ .hero .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+} 
+
+.hero .box-container .box:hover{
+    background:#fff;
+}
+
+.hero .box-container .box:hover > *{
+    color:var(--black);
+} 
+
+
+#heros img{
+    margin:10px;
+    padding:10px 20px;
+    border-radius:0.9cm
+
+}
+#heros img:hover{
+    transition: 0.5s ;
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+.paragraph{
+    color:white;
+    font-size:20px;
+    font-family:Courier New;
+    font-weight:10px ;
+    padding: 5px  0px 30px 0;
+
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+    {% comment %} <header class="header">
+
+        <a href="#" class="logo">
+            <img src="{% static 'images/download23.png' %}" alt="">
+        </a>
+
+        <nav class="navbar">
+            <a href="{% url 'home' %}">home</a>
+            <a href="{% url 'about-us' %}">about</a>
+            <a href="#menu">menu</a>
+            <a href="#products">products</a>
+          <a href="#contact">contact</a>
+            {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}">logout</a>
+
+                {% else %}
+                <a href="{% url 'signup' %}">SignIn</a>
+            {% endif %}
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="far fa-user" id="user-avatar"> {{ request.user.username }} </div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-1.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-2.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 02</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-3.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 03</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-4.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 04</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <a href="#" class="btn">checkout now</a>
+        </div>
+
+    </header> {% endcomment %}
+
+{% comment %} <h3   style="color:red;font-size:20px;text-align:center"><i>{% for meg in song_error %} {{ meg}} {% endfor %}</i> </h3>
+<br>
+    <section class="about" id="about">
+    
+        <div class="row">
+
+            <div class="image">
+                <img src="{% static 'images/music/pexels-photo-248510.jpeg' %}"
+                    alt="" width="950px" height="550px">
+            </div>
+
+            <div class="content">
+                <h3>The power of music: how it can benefit health</h3>
+                <p>“I think music in itself is healing,” American musician Billy Joel once said. “It’s an explosive expression of humanity. It’s something we are all touched by. No matter what culture we’re from, everyone loves music.” Most of us would wholeheartedly agree with this statement, and it is this universal bond with music that has led researchers across the globe to investigate its therapeutic potential.</p>
+                <p>By analyzing 72 randomized controlled trials involving more than 7,000 patients who received surgery, researchers found those who were played music after their procedure reported feeling less pain and anxiety than those who did not listen to music, and they were also less likely to need pain medication.</p>
+                <a href="{% url 'about-us' %}" class="btn">learn more</a>
+            </div>
+
+        </div>
+
+    </section>
+
+<form action="{% url 'search-album' %}" method='post'>
+    {% csrf_token %}
+<div class="main">
+    <input type="text" name="Search" placeholder="Browse by album...." >
+    <button type='submit' href="">search</button>
+  </div>
+  </form>
+  <section class="hero" id="hero">
+    <div class="box-container">
+{% comment %} <table >
+    <tr class='heros'>
+        {% for hero in hero %}
+       
+        <td  style="width:300;height:300">
+          <a href="{% url 'hero-albums' hero.hero.id  %}">  <img src="{{ hero.image.url }}" alt="" width="150px" height="150px"  ></a>
+  
+        </td>
+        {% endfor %}
+
+    </tr>
+</table>
+
+<div class='paragraph'>
+<p class="text-center"><i>Search for your favourite actor's albums </i> </p>
+</div>
+<div class="row" id='heros'>
+    <div class="mb-6 col-md-12">
+        {% for hero in hero %}
+        <a href="{% url 'hero-albums' hero.hero.id  %}">  <img src="{{ hero.image.url }}" alt="" width="150px" height="150px"  ></a>
+        {% endfor %}
+    </div>
+</div>
+
+    </div>
+</section> {% endcomment %}
+{% comment %} <div style="padding-left:40%">
+    {% if is_paginated %}
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+            {% endif %}
+    
+            <span class="current" style="color:white;font-size:20px">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+    {% endif %}
+    {% endif %}
+</div> {% endcomment %}
+
+
+{% comment %} 
+    <section class="menu" id="menu">
+
+        <div class="box-container">
+{% for album in object_list %}
+            <div class="box">
+                <img src="{{ album.album_image.url }}" alt="">
+                <h3>{{ album.album }}</h3>
+
+                <a href="{% url 'audio' album.album %}" class="btn">Open</a>
+            </div>
+{% endfor %}
+
+
+
+
+        </div>
+
+    </section>
+
+
+    <section class="menu" id="menu">
+
+        <div class="box-container">
+{% for album in res %}
+            <div class="box">
+                <img src="{{ album.album_image.url }}" alt="">
+                <h3>{{ album.album }}</h3>
+
+                <a href="{% url 'audio' album.album %}" class="btn">Open</a>
+            </div>
+{% endfor %}
+
+
+
+
+        </div>
+
+    </section> 
+
+
+
+    <section class="menu" id="menu">
+
+        <div class="box-container">
+{% for album in data %}
+            <div class="box">
+                <img src="{{ album.album_image.url }}" alt="">
+                <h3>{{ album.album }}</h3>
+
+                <a href="{% url 'audio' album.album %}" class="btn">Open</a>
+            </div>
+{% endfor %}
+        </section> {% endcomment %}
+
+{% comment %} 
+
+        </div>
+
+        {% comment %} <div align="center">
+            {% if is_paginated %}
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}"> Previous</a>
+                    {% endif %}
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                    {% endif %}
+            {% endif %}
+        </div> {% endcomment %}
+        
+
+    {% comment %} </section> {% endcomment %}
+
+
+{% comment %}   
+
+
+    <div class='paragraph'>
+    
+{% if mesg %}
+        <p class="text-center"><i>{{ mesg}}</i> </p>
+        {% endif %}
+        </div>
+        
+        </div>
+       
+        <div class='paragraph'>
+    
+            {% if info %}
+                    <p class="text-center"><i>{{ info}}</i> </p>
+                    {% endif %}
+                    </div>
+                    
+                    </div>   {% endcomment %}
+
+               
+                        <div class="row" id='heros'>
+                            <div class="mb-6 col-md-12">
+                                {% for hero in hero %}
+                                <a href="{% url 'hero-albums' hero.hero.id  %}">  <img src="{{ hero.image.url }}" alt="" width="150px" height="150px"  ></a>
+                                {% endfor %}
+                            </div>
+                        </div>
+{% comment %} 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="{% static 'js/myscript.js' %}"></script> {% endcomment %}
+
+</body>
+
+</html>

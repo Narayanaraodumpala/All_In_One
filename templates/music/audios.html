@@ -1,0 +1,256 @@
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnePlaceforAll</title>
+
+    <!-- font awesome cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/mysrtyle.css' %}">
+
+
+<style>
+   #song-row{
+    font-size:18px;
+    text-align:center;
+    padding-left:2%;
+    padding-top:3%;
+    padding-bottom:3%;
+   }
+   #track-row{
+       font-size:18px;
+       text-align:center;
+       padding-left:2%;
+       padding-top:5%;
+       padding-bottom:5%
+   }
+      
+</style>
+
+</head>
+
+
+<body>
+header section starts  -->
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="{% static 'images/download23.png' %}" alt="">
+        </a>
+
+        <nav class="navbar">
+            <a href="{% url 'home' %}">home</a>
+            <a href="{% url 'about-us' %}">about</a>
+            <a href="#menu">menu</a>
+            <a href="#products">products</a>
+          <a href="#contact">contact</a>
+            {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}">logout</a>
+
+                {% else %}
+                <a href="{% url 'signup' %}">SignIn</a>
+            {% endif %}
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="far fa-user" id="user-avatar"> {{ request.user.username }} </div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-1.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-2.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 02</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-3.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 03</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-4.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 04</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <a href="#" class="btn">checkout now</a>
+        </div>
+
+    </header>
+    <pre>
+
+
+
+
+
+
+
+
+
+
+
+    </pre>
+
+    <!-- header section ends -->
+
+
+
+    <!-- home section ends -->
+
+    <!-- about section starts  -->
+
+    <section class="about" id="about">
+
+
+
+        <div class="row">
+
+            <div class="image">
+     <img src="{{ alb_image }}"
+                    alt="" width="550px" height="550px">
+            </div>
+
+            <div class="content">
+                <h3>Album : {{ album }}</h3>
+                <p>Hero : {{ album_hero }}</p>
+                <p>Total Tracks : {{ total_audios }}</p>
+
+            </div>
+
+        </div>
+
+    </section>
+  
+<!--
+<div class='songs'>
+
+<table class="table table-dark table-striped">
+    <tr style="align:center;">
+        <td class="table-primary" style='padding:30px;'>Sno</td>
+        <td class="table-secondary">Track Name</td>
+        <td class="table-success">Track</td>
+        <td class="table-danger">Duration</td>
+        <td class="table-warning">Status</td>
+        <td class="table-info">Wish</td>
+        
+      </tr>
+  </table>
+</div>
+
+
+-->
+<pre>
+        
+      </tr>
+  </table>
+</div>
+
+
+-->
+<pre>
+
+</pre>
+
+
+<div class="container" >
+    <table class="table table-dark table-striped" >
+        <tr>
+            <td class="table-secondary" id='song-row' >S.NO</td>
+            <td class="table-secondary" id='song-row'>Track Name</td>
+            <td class="table-secondary" id='song-row' >Track </td>
+            <td class="table-secondary" id='song-row' >Duration </td>
+
+            <td class="table-secondary" id='song-row'>Add to Favourate &nbsp;&nbsp&nbsp&nbsp</td>
+          </tr>
+       {% for audio in audios %}
+       <tr>
+        <td class="table-primary" id='track-row'>.....</td>
+            <td class="table-primary" id='track-row'>{{audio.song_name }}</td>
+            <td class="table-primary" id='track-row'><audio src="{{ audio.song.url }}" controls="controls">
+                Your browser does not support the audio element.
+              </audio></td>
+              <td class="table-primary" id='track-row'>{{audio.duration }}</td>
+             
+
+              <td class="table-primary" id='track-row'><a href="{% url 'add_fav'  audio.id %}" style='text-decoration:None;color:white'> <button type='submit' class='btn btn-success' style='text-decoration:None;background-color:green;color:white;border-radius:0.5cm'>A.D.F </a></td>           
+        </tr>      
+           {% endfor %}
+      </table>
+
+</div>
+
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="{% static 'js/myscript.js' %}"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

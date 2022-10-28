@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnePlaceforAll</title>
+
+    <!-- font awesome cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/mysrtyle.css' %}">
+    <style type="text/css">
+
+
+        *{
+         margin: 0px;
+         padding: 0px;
+        }
+        body{
+         font-family: arial;
+        }
+        .main{
+        
+         margin: 2%;
+        }
+        
+        .card{
+             width: 20%;
+             display: inline-block;
+             box-shadow: 2px 2px 20px black;
+             border-radius: 5px; 
+             margin: 2%;
+            }
+        
+        .image img{
+          width: 100%;
+          border-top-right-radius: 5px;
+          border-top-left-radius: 5px;
+          
+        
+         
+         }
+        
+        .title{
+         
+          text-align: center;
+          padding: 10px;
+          
+         }
+        
+        h1{
+          font-size: 20px;
+         }
+        
+        .des{
+          padding: 3px;
+          text-align: center;
+         
+          padding-top: 10px;
+                border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        button{
+          margin-top: 40px;
+          margin-bottom: 10px;
+          background-color: white;
+          border: 1px solid black;
+          border-radius: 5px;
+          padding:10px;
+        }
+        button:hover{
+          background-color: black;
+          color: white;
+          transition: .5s;
+          cursor: pointer;
+        }
+        
+        </style>
+
+
+</head>
+
+
+<body>
+header section starts  -->
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="{% static 'images/download23.png' %}" alt="">
+        </a>
+
+        <nav class="navbar">
+            <a href="{% url 'home' %}">home</a>
+            <a href="{% url 'about-us' %}">about</a>
+            <a href="#menu">menu</a>
+            <a href="#products">products</a>
+          <a href="#contact">contact</a>
+            {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}">logout</a>
+
+                {% else %}
+                <a href="{% url 'signup' %}">SignIn</a>
+            {% endif %}
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="far fa-user" id="user-avatar"> {{ request.user.username }} </div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-1.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-2.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 02</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-3.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 03</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="{% static 'images/cart-item-4.png' %}" alt="">
+                <div class="content">
+                    <h3>cart item 04</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <a href="#" class="btn">checkout now</a>
+        </div>
+
+    </header>
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+    <!-- header section ends -->
+
+
+
+    <!-- home section ends -->
+
+    <!-- about section starts  -->
+ 
+    {% if pk == 101 %}
+    <section class="about" id="about">
+
+
+
+        <div class="row">
+
+            <div class="image">
+                <img src="{% static 'images/cloths/the-best-formal-shirts-for-men-in-india1400-1536926768.jpg' %}"
+                    alt="" width="950px" height="550px">
+            </div>
+
+            <div class="content">
+                <h3>How to Find the Proper Fit of a Shirt?</h3>
+                <p>No matter what option you chose, the fit and the style options you choose the final fit will have a huge impact on the overall look. People often talk about the “perfect fit” as if it was one objective standard, but in fact, it contains many subjective elements. The first step is to determine what fit and look you like. Though it varies by manufacturer, the most typical choices are: Classic Fit, Slim Fit, Modern/Contemporary Fit, and Skinny Fit.</p>
+                <p>Since men in the mid-20th century would never wear a shirt without a jacket (or even a vest), the main priority was comfort. This is the go-to choice for those with a more classic style who favor comfort over fashion. <span style="color: aqua">OnePlaceForAll</span> ’</p>
+                <a href="{% url 'about-us' %}" class="btn">learn more</a>
+            </div>
+
+        </div>
+
+    </section>
+    {% else %}
+    {% if pk == 102 %}
+    <section class="about" id="about">
+
+
+
+        <div class="row">
+
+            <div class="image">
+                <img src="{% static 'images/cloths/thumb-1920-696703.jpg' %}"
+                    alt="" width="950px" height="550px">
+            </div>
+
+            <div class="content">
+                <h3>How to Wear a Suit: Unspoken Rules and 2 Styles You Need to Know !</h3>
+                <p>If you’re not in a setting where you’re expected to wear the best suits all the time, keeping tabs on all the style rules to follow might be a daunting task. Many of them are unspoken and you’re only clued in if you’re doing it wrong (because someone will immediately tell you so) or live and work as an expert or avid fashion follower..</p>
+                <p>To avoid this, we took the time to round up the most important rules for how to wear a suit and put them into a simple, condensed cheat-sheet that you can easily refer to whenever you find yourself neck-deep in a three-piece. <span style="color: aqua">OnePlaceForAll</span> ’</p>
+                <a href="{% url 'about-us' %}" class="btn">learn more</a>
+            </div>
+
+        </div>
+
+    </section>
+    {% else %}
+
+   
+    {% endif %}
+    {% if pk == 11010141 %}
+    <section class="about" id="about">
+
+
+
+        <div class="row">
+
+            <div class="image">
+                <img src="{% static 'images/cloths/jeen2.jpg' %}"
+                    alt="" width="950px" height="550px">
+            </div>
+
+            <div class="content">
+                <h3>The name ‘jeans’</h3>
+                <p>The name ‘jeans’ is believed to have derived from the anglicised word for Genes, the demonym for people from Genoa in Italy.
+
+                    Genoa was a hub for trade in the 17th and 18th centuries. Sailing merchants from Genoa traded their goods throughout Europe, particularly to England and France.</p>
+                <p>One article that made Genoa particularly famous was a sturdy, deep blue cotton cloth, ideally suited to making tough work clothes for fishermen, seamen, dockworkers and miners. <span style="color: aqua">OnePlaceForAll</span> ’</p>
+                <a href="{% url 'about-us' %}" class="btn">learn more</a>
+            </div>
+
+        </div>
+
+    </section>
+    {% else %}
+
+   
+    {% endif %}
+     {% if pk == 105 %}
+    <section class="about" id="about">
+
+
+
+        <div class="row">
+
+            <div class="image">
+                <img src="{% static 'images/cloths/sare.jpg' %}"
+                    alt="" width="950px" height="550px">
+            </div>
+
+            <div class="content">
+                <h3>What is so special about saree?</h3>
+                <p>Saree is one of the most elegant outfits that a woman can wear. Today, this Indian outfit comes in various fabrics and styles with both traditional and modern touch. You can pick one based on your need and choice. Though draping a saree takes time, it can completely transform your look.</p>
+                <p>Wearing a saree results in spiritual healing; thus, reducing the distressing energy covering around the body and the distress caused by negative energies. Those facing distress due to negative energies have negative thoughts about wearing a saree.. <span style="color: aqua">OnePlaceForAll</span> ’</p>
+                <a href="{% url 'about-us' %}" class="btn">learn more</a>
+            </div>
+
+        </div>
+
+    </section>
+    {% else %}
+
+   
+    {% endif %}
+    {% if pk == 1010101 %}
+    <section class="about" id="about">
+
+
+
+        <div class="row">
+
+            <div class="image">
+                <img src="{% static 'images/cloths/half.jpg' %}"
+                    alt="" width="950px" height="550px">
+            </div>
+
+            <div class="content">
+                <h3>What does a half saree mean?</h3>
+                <p>Image result for half saree about
+                    A half saree is a traditional outfit that is extremely prominent in South India. Referred to as Langa Voni in Telugu, Pattu Pavadai Daavani in Tamil and Langa Davani in Kannada, this outfit is worn by women who have crossed puberty and are eligible for marriage.</p>
+                <p>Sometimes its also refer as a “two-piece Saree”, “Half Lehenga” or “Lehenga Saree”! South Indians adorably call the Half Saree as a Langa Voni (in AP/Telangana), also as Langa Davani (in Karnataka) and Pattu Pavadai Dhavani (in Tamil Nadu)! <span style="color: aqua">OnePlaceForAll</span> ’</p>
+                <a href="{% url 'about-us' %}" class="btn">learn more</a>
+            </div>
+
+        </div>
+
+    </section>
+    {% else %}
+
+   
+    {% endif %}
+
+   
+    {% endif %}
+  
+<pre>
+
+
+</pre>
+
+
+
+
+    <!-- about section ends -->
+
+    <!-- menu section starts  -->
+
+    {% comment %} <section class="menu" id="menu">
+
+        <div class="box-container">
+{% for cloth in cloths %}
+            <div class="box">
+                <img src="{{ cloth.category_image.url }}" alt="">
+                <h3>{{ cloth.category }}</h3>
+ 
+                <a href="{% url 'cloths' %}" class="btn">Open</a>
+            </div>
+{% endfor %}
+
+
+
+
+        </div>
+
+    </section> {% endcomment %}
+    <!-- menu section ends -->
+
+
+    {% comment %} {% for cloth in cloths %}
+    <div class="container">
+  
+        <div class="card">
+            <div class="imgBx">
+                    <img src="{{ cloth.product_image.url  }}" alt="" width="300" height="300">
+                </div>
+                <div class="content">
+                    <h2>{{ cloth.product_name }}</h2>
+                    <p>{{ cloth.price }}</p>
+                    <p>{{ cloth.status }}</p>
+                    
+                </div>
+          
+              
+       
+        
+          
+        </div>
+    </div>
+    {% endfor %} {% endcomment %}
+
+
+<!-- content in this Section -->
+
+
+ 
+<!-- pagination elements -->
+
+    <div class="main">
+
+        <!--cards -->
+        {% for product in products %}
+       
+       <div class="card">
+       
+          <div class="image">
+         <img src="{{ product.product_image.url }}" width='300' height='300'>
+           </div>
+             <div class="title">
+              <h1>{{ product.product_name }}</h1>
+              </div>
+       <div class="des">
+        <p>{{ product.price }}</p>
+        <p>{{ product.status }}</p>
+       <a href="{% url 'openit' product.product_id %}"><button> Open It </button></a>
+       </div>
+       </div>
+
+       {% endfor %} 
+
+
+</div>
+
+
+{##}
+{##}
+{#<ul class='pagination justify-content-center'>#}
+{#  {% if cloths.has_previous %}#}
+{#    <li class="mx-1"><a href='{% url "cloths_products" cloths.previous_page_number %}'>Previous</a></li>#}
+{#  {% else %}#}
+{#    <li class='mx-1 disabled'><span >Previous</span></li>#}
+{#  {% endif %}#}
+{##}
+{#  {% for i in cloths.paginator.page_range %}#}
+{#    {% if cloths.number == i %}#}
+{#      <li class='active mx-1'><span>{{ i }}</span></li>#}
+{#      {% else %}#}
+{#      <li class="mx-1"><a href='{% url "cloths_products" i %}'>{{ i }}</a></li>#}
+{#    {% endif %}#}
+{#  {% endfor %}#}
+{##}
+{#  {% if cloths.has_next %}#}
+{#    <li class="mx-1"><a href='{% url "cloths_products" cloths.next_page_number %}' >Next</a></li>#}
+{#  {% else %}#}
+{#    <li class="mx-1"><span class='disabled'>Next</span></li>#}
+{#  {% endif %}#}
+{#</ul>#}
+
+{##}
+{#<ul class='pagination justify-content-center'>#}
+{#  {% if cloths.has_previous %}<li class="mx-1"><li class="mx-1"><a href=''>Previous</a></li>#}
+{#    <li class="mx-1"><a href='{% url "list_users" cloths.previous_page_number %}'>Previous</a></li>#}
+{#  {% else %}#}
+{#    <li class='mx-1 '><span >Previous</span></li>#}
+{#  {% endif %}#}
+{##}
+{#  {% for i in cloths.paginator.page_range %}#}
+{#    {% if cloths.number == i %}#}
+{#      <li class='active mx-1'><span>{{ i }}</span></li>#}
+{#      {% else %}#}
+{#        <li class="mx-1"><a href=''>{{ i }}</a></li>#}
+{#      <li class="mx-1"><a href='{% url "list_users" i %}'>{{ i }}</a></li>#}
+{#    {% endif %}#}
+{#  {% endfor %}#}
+{##}
+{#  {% if cloths.has_next %}#}
+{#       <li class="mx-1"><a href='' >Next</a></li>#}
+{#    <li class="mx-1"><a href='{% url "list_users" cloths.next_page_number %}' >Next</a></li>#}
+{#  {% else %}#}
+{#    <li class="mx-1"><span class='disabled'>Next</span></li>#}
+{#  {% endif %}#}
+{#</ul>#}
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="{% static 'js/myscript.js' %}"></script>
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</body>
+
+</html>

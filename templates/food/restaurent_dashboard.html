@@ -1,0 +1,377 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/food/restaurant_dashboard.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/food/popstyle.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <section class="header">
+        <div class="logo">
+            <i class="ri-menu-line icon icon-0 menu"></i>
+            <h2><span>{% for res in rest_data %} {{ res.rest_name }} {% endfor %}</span></h2>
+        </div>
+        <div class="search--notification--profile">
+            <div class="search">
+                <input type="text" placeholder="Search Scdule..">
+                <button><i class="ri-search-2-line"></i></button>
+            </div>
+            <div class="notification--profile">
+                <div class="picon lock">
+                    <i class="ri-lock-line"></i>
+                </div>
+                <div class="picon bell">
+                    <i class="ri-notification-2-line"></i>
+                </div>
+                <div class="picon chat">
+                    <i class="ri-wechat-2-line"></i>
+                </div>
+                <div class="picon profile">
+                    {% for res in rest_res %}
+                    <img src="{{ res.image.url }}" width=30 alt="">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="sidebar">
+            <ul class="sidebar--items">
+                <li>
+                    <a href="#" id="active--link" style="text-decoration: none">
+                        <span class="icon icon-1"><i class="ri-layout-grid-line"></i></span>
+                        <span class="sidebar--item">Dashboard</span>
+                    </a>
+                </li>
+             
+                <li>
+                    <a href="{%  url 'home'  %}" style="text-decoration: none">
+                        <span class="icon icon-5"><i class="ri-line-chart-line"></i></span>
+                        <span class="sidebar--item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" style="text-decoration: none">
+                        <span class="icon icon-6" style="text-decoration: none"><i class="ri-customer-service-line"></i></span>
+                        <span class="sidebar--item">Support</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar--bottom-items"  >
+                <li>
+                    <a href="#" style="text-decoration: none">
+                        <span class="icon icon-7"><i class="ri-settings-3-line"></i></span>
+                        <span class="sidebar--item">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"  style="text-decoration: none">
+                        <span class="icon icon-8"><i class="ri-logout-box-r-line"></i></span>
+                        <span class="sidebar--item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--content">
+            <div class="overview">
+                <div class="title">
+                    <h2 class="section--title">Overview</h2>
+                    <select name="date" id="date" class="dropdown">
+                        <option value="today">Today</option>
+                        <option value="lastweek">Last Week</option>
+                        <option value="lastmonth">Last Month</option>
+                        <option value="lastyear">Last Year</option>
+                        <option value="alltime">All Time</option>
+                    </select>
+                </div>
+                <div class="cards">
+                    <div class="card card-1">
+                        <div class="card--data">
+                            <div class="card--content">
+                                <h5 class="card--title">Total Dishes</h5>
+                                <h1>{{ fcount }}</h1>
+                            </div>
+                            <i class="ri-user-2-line card--icon--lg"></i>
+                        </div>
+                        <div class="card--stats">
+                            <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>65%</span>
+                            <span><i class="ri-arrow-up-s-fill card--icon up--arrow"></i>10</span>
+                            <span><i class="ri-arrow-down-s-fill card--icon down--arrow"></i>2</span>
+                        </div>
+                    </div>
+                    <div class="card card-2">
+                        <div class="card--data">
+                            <div class="card--content">
+                                <h5 class="card--title">Total Orders till Now</h5>
+                                <h1>1145</h1>
+                            </div>
+                            <i class="ri-user-line card--icon--lg"></i>
+                        </div>
+                        <div class="card--stats">
+                            <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>82%</span>
+                            <span><i class="ri-arrow-up-s-fill card--icon up--arrow"></i>230</span>
+                            <span><i class="ri-arrow-down-s-fill card--icon down--arrow"></i>45</span>
+                        </div>
+                    </div>
+                    <div class="card card-3">
+                        <div class="card--data">
+                            <div class="card--content">
+                                <h5 class="card--title">Total Items In Cart</h5>
+                                <h1>102</h1>
+                            </div>
+                            <i class="ri-calendar-2-line card--icon--lg"></i>
+                        </div>
+                        <div class="card--stats">
+                            <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>27%</span>
+                            <span><i class="ri-arrow-up-s-fill card--icon up--arrow"></i>31</span>
+                            <span><i class="ri-arrow-down-s-fill card--icon down--arrow"></i>23</span>
+                        </div>
+                    </div>
+                    <div class="card card-4">
+                        <div class="card--data">
+                            <div class="card--content">
+                                <h5 class="card--title">Beds Available</h5>
+                                <h1>15</h1>
+                            </div>
+                            <i class="ri-hotel-bed-line card--icon--lg"></i>
+                        </div>
+                        <div class="card--stats">
+                            <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>8%</span>
+                            <span><i class="ri-arrow-up-s-fill card--icon up--arrow"></i>11</span>
+                            <span><i class="ri-arrow-down-s-fill card--icon down--arrow"></i>2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctors">
+                <div class="title">
+                    <h2 class="section--title">Statistics</h2>
+                    <div class="doctors--right--btns">
+                        {% comment %} <select name="date" id="date" class="dropdown doctor--filter">
+                            <option >Filter</option>
+                            <option value="free">Free</option>
+                            <option value="scheduled">Scheduled</option>
+                        </select> {% endcomment %}
+                       <!----<button class="add" data-toggle="modal" data-target="modalRegister"><i class="ri-add-line"></i>Add Doctor</button>!-->
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        <i class="ri-add-line"></i> Add Food
+                      </button>
+                      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalCenterTitle">Add Food</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                          
+                            <div class="modal-body">
+                               
+                         <form action="{% url 'addfooditem' %}" method='post' enctype="multipart/form-data" >
+                               {% csrf_token %}
+   
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Item</label>
+            <input type="text" class="form-control" name='item' id="inputEmail4" placeholder=" Enter Item Name">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Item type</label>
+            <input type="text" class="form-control" id="inputPassword4" name='itemtype' placeholder="Enter Item type">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Price</label>
+          <input type="number" class="form-control" name='price' id="inputAddress" placeholder="Enter item Price">
+        </div>
+      
+        <div class="form-group col-md-8">
+            <label for="inputState">Status</label>
+            <select id="inputState" class="form-control"  name='status'>
+              <option selected>Choose...</option>
+              <option>Available</option>
+              <option>No</option>
+            </select>
+          </div>
+        
+          
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Item image</label>
+            <input type="file" class="form-control"  name='item_image' id="inputCity">
+          </div>
+       
+          <div class="form-group col-md-6">
+            <label for="inputZip">Ratings</label>
+            <input type="text" name='ratings'  placeholder='Enter Item rating' class="form-control" id="inputZip">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Food Category</label>
+            <select id="inputState" class="form-select"  name="fcat" >
+                <option selected>Choose...</option>
+               
+              {% for res in res %}
+              
+
+              
+              <option value="{{ res.id }}"> {{ res.category }} </option>
+            
+          {%endfor %}
+              
+            </select>
+          </div>
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Add Item</button>
+  
+    </form>
+                            </div>
+              
+                       
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+             
+            </div>
+            <div class="recent--patients">
+                <div class="title">
+                    <h2 class="section--title">Restaurent Details</h2>
+                    {% comment %} <button class="add"><i class="ri-add-line"></i>Add Doctor</button> {% endcomment %}
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Name</th>
+                                <th>City</th>
+                                <th>Address</th>
+                                <th>Type</th>
+                                <th>Ratings</th>
+                                <th></th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for res in rest_data %}
+                            <tr>
+                                <td>{{  res.rest_id}}</td>
+                                <td>{{  res.rest_name }}</td>
+                                <td>{{  res.rest_city }}</td>
+                                <td>{{  res.rest_address }}</td>
+                                <td>{{  res.rest_type }}</td>
+                                <td>{{  res.rest_ratings }} *</td>
+                                <td>{{  res.item_type }}</td>
+                                {% if res.rest_status == 'Approved' %}
+                                   <td><span style="color:green">{{ res.rest_status }}</span></td>
+   
+                                   {% elif res.rest_status == 'Pending' %}
+                                   <td><span style="color:#e6e600">{{ res.rest_status }}</span></td>
+                                    {% else %} 
+                                    <td><span style="color:red">{{ res.rest_status }}</span></td>
+                                   {% endif %}
+                                
+                                <td><span><a href=""><i class="ri-edit-line edit"></i></a></span> <a href=""><i class="ri-delete-bin-line delete"></i></a></span></td>
+                            </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="recent--patients">
+                <div class="title">
+                    <h2 class="section--title">Food  Details</h2>
+                    {% comment %} <button class="add"><i class="ri-add-line"></i>Add Food</button> {% endcomment %}
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Dish</th>
+                                <th>Type</th>
+                                <th>Price</th>
+                                <th>Type</th>
+                                
+                                <th>Status</th>
+                                <th>Ratings</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          {% for res in food %}
+                            <tr>
+                                <td>{{  res.fid}}</td>
+                                <td>{{  res.item }}</td>
+                                <td>{{  res.item_type }}</td>
+                                <td>{{  res.item_price }}</td>
+                                <td>{{  res.item_type }}</td>
+                             {% if res.status == 'Available' %}
+                                <td><span style="color:green">{{ res.status }}</span></td>
+
+                               
+                                 {% else %} 
+                                 <td><span style="color:red">{{ res.status }}</span></td>
+                                {% endif %}
+                                <td>{{ res.item_ratings }} *</td>
+                                
+                                <td><span><a href=""><i class="ri-edit-line edit"></i></a> <a href=""><i class="ri-delete-bin-line delete"></i></a></span></td>
+                            </tr>
+                            {% endfor %}
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+    
+
+    <script src="{% static 'js/food/restaurent_dashboard.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+
